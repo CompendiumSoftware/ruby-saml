@@ -4,7 +4,7 @@ gemspec
 
 group :test do
   gem "ruby-debug", "~> 0.10.4", :require => nil, :platforms => :ruby_18
-  gem "debugger",   "~> 1.1",    :require => nil, :platforms => :ruby_19
+  gem "debugger",   "~> 1.6.6",    :require => nil, :platforms => [ :ruby_21, :ruby_20, :ruby_19 ]
   gem "shoulda",    "~> 2.11"
   gem "rake",       "~> 10"
   gem "mocha",      "~> 0.14"
