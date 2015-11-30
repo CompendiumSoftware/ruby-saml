@@ -195,7 +195,7 @@ module OneLogin
 
       def validate(soft = true)
         if encrypted?
-          return true
+          return document.validate_document(get_fingerprint, soft)
         end
         
         validate_structure(soft)      &&
