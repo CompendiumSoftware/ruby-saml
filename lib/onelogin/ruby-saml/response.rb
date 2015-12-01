@@ -152,7 +152,7 @@ module OneLogin
           pk = OpenSSL::PKey::RSA.new(@private_key)
           data_key = pk.private_decrypt(Base64.decode64(encrypted_key.text), OpenSSL::PKey::RSA::PKCS1_OAEP_PADDING)
 
-          # Dervice the encryption alogrithm from mthe document
+          # Derive the encryption alogrithm from the document
           algorithm = "aes-256-cbc" # default algorithm
 
           # In future we need to map values in response with valid ciphers. e.g. aes256-cbc vs aes-256-cbc
