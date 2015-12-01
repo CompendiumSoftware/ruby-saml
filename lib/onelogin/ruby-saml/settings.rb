@@ -22,7 +22,7 @@ module OneLogin
       attr_accessor :double_quote_xml_attribute_values
       attr_accessor :passive
       attr_accessor :protocol_binding
-      attr_accessor :sign_request, :certificate, :private_key, :digest_method, :signature_method, :use_sha256
+      attr_accessor :sign_request, :certificate, :private_key, :digest_method, :signature_method
 
       private
 
@@ -32,7 +32,6 @@ module OneLogin
         :compress_request                          => true,
         :sign_request                              => false,
         :double_quote_xml_attribute_values         => false,
-        :use_sha256                                => false,
         :digest_method                             => "SHA1",
         :signature_method                          => "SHA1"
       }

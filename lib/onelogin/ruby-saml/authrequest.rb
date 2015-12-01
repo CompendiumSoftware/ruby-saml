@@ -97,10 +97,6 @@ module OneLogin
           class_ref.text = settings.authn_context
         end
 
-        if settings.use_sha256
-          settings.digest_method = XMLSecurity::RequestDocument::SHA256
-        end
-
         if settings.sign_request && settings.private_key && settings.certificate
           request_doc.sign_document(settings.private_key, settings.certificate, settings.signature_method, settings.digest_method)
         end
