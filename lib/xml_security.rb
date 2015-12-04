@@ -79,6 +79,7 @@ module XMLSecurity
 
     SHA1            = "http://www.w3.org/2000/09/xmldsig#sha1"
     SHA256          = "http://www.w3.org/2000/09/xmldsig#sha256"
+    RSA_SHA256      = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"
     SHA384          = "http://www.w3.org/2000/09/xmldsig#sha384"
     SHA512          = "http://www.w3.org/2000/09/xmldsig#sha512"
     ENVELOPED_SIG   = "http://www.w3.org/2000/09/xmldsig#enveloped-signature"
@@ -109,7 +110,7 @@ module XMLSecurity
       signature_element   = REXML::Element.new("Signature").add_namespace(DSIG)
       signed_info_element = signature_element.add_element("SignedInfo")
       signed_info_element.add_element("CanonicalizationMethod", {"Algorithm" => C14N})
-      signed_info_element.add_element("SignatureMethod", {"Algorithm"=>SHA1})
+      signed_info_element.add_element("SignatureMethod", {"Algorithm"=>signature_method})
 
       # Add Reference
       reference_element     = signed_info_element.add_element("Reference", {"URI" => "##{uuid}"})
